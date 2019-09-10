@@ -1,4 +1,4 @@
-#output "ICP Console URL" {
+output "ICP Console URL" {
 #  value = "https://${var.cluster_vip}:8443"
 #}
 

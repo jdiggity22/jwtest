@@ -126,7 +126,7 @@ resource "vsphere_virtual_machine" "camapp" {
       }
 
       network_interface {
-        ipv4_address  = "${var.staticipblock != "0.0.0.0/0" ? cidrhost(var.staticipblock, (var.team_number * 10) + var.staticipblock_offset + count.index) : ""}"
+        #ipv4_address  = "${var.staticipblock != "0.0.0.0/0" ? cidrhost(var.staticipblock, (var.team_number * 10) + var.staticipblock_offset + count.index) : ""}"
         ipv4_netmask  = "${var.netmask}"
       }
 
@@ -139,7 +139,7 @@ resource "vsphere_virtual_machine" "camapp" {
   connection {
     user          = "${var.ssh_user}"
     password      = "${var.ssh_password}"
-    host          = "${var.staticipblock != "0.0.0.0/0" ? cidrhost(var.staticipblock, (var.team_number * 10) + var.staticipblock_offset + count.index) : ""}"
+    #host          = "${var.staticipblock != "0.0.0.0/0" ? cidrhost(var.staticipblock, (var.team_number * 10) + var.staticipblock_offset + count.index) : ""}"
   }
 
   provisioner "file" {
@@ -223,7 +223,7 @@ resource "vsphere_virtual_machine" "camdb" {
       }
 
       network_interface {
-        ipv4_address  = "${var.staticipblock != "0.0.0.0/0" ? cidrhost(var.staticipblock, (var.team_number * 10) + var.staticipblock_offset + count.index + 1 ) : ""}"
+        #ipv4_address  = "${var.staticipblock != "0.0.0.0/0" ? cidrhost(var.staticipblock, (var.team_number * 10) + var.staticipblock_offset + count.index + 1 ) : ""}"
         ipv4_netmask  = "${var.netmask}"
       }
 
@@ -236,7 +236,7 @@ resource "vsphere_virtual_machine" "camdb" {
   connection {
     user          = "${var.ssh_user}"
     password      = "${var.ssh_password}"
-    host          = "${var.staticipblock != "0.0.0.0/0" ? cidrhost(var.staticipblock, (var.team_number * 10) + var.staticipblock_offset + count.index + 1) : ""}"
+    #host          = "${var.staticipblock != "0.0.0.0/0" ? cidrhost(var.staticipblock, (var.team_number * 10) + var.staticipblock_offset + count.index + 1) : ""}"
   }
 
   provisioner "file" {

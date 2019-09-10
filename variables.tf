@@ -37,10 +37,10 @@ variable "network_label" {
   default     = "___INSERT_YOUR_OWN____"
 }
 
-variable "datastore" {
-  description = "Name of datastore to use for the VMs"
-  default     = ""
-}
+#variable "datastore" {
+#  description = "Name of datastore to use for the VMs"
+#  default     = ""
+#}
 
 variable "datastore_cluster" {
   description = "Name of datastore cluster to use for the VMs"
@@ -70,15 +70,15 @@ variable "domain" {
   default     = ""
 }
 
-variable "staticipblock" {
-  description = "Specify start unused static ip cidr block to assign IP addresses to the cluster, e.g. 172.16.0.0/16.  Set to 0.0.0.0/0 for DHCP."
-  default     = "0.0.0.0/0"
-}
+#variable "staticipblock" {
+#  description = "Specify start unused static ip cidr block to assign IP addresses to the cluster, e.g. 172.16.0.0/16.  Set to 0.0.0.0/0 for DHCP."
+#  default     = "0.0.0.0/0"
+#}
 
-variable "staticipblock_offset" {
-  description = "Specify the starting offset of the staticipblock to begin assigning IP addresses from.  e.g. with staticipblock 172.16.0.0/16, offset of 10 will cause IP address assignment to begin at 172.16.0.11."
-  default     = 0
-}
+#variable "staticipblock_offset" {
+#  description = "Specify the starting offset of the staticipblock to begin assigning IP addresses from.  e.g. with staticipblock 172.16.0.0/16, offset of 10 will cause IP address assignment to begin at 172.16.0.11."
+#  default     = 0
+#}
 
 variable "gateway" {
   description = "Default gateway for the newly provisioned VMs. Leave blank to use DHCP"
@@ -141,11 +141,11 @@ variable "ssh_password" {
   default     = ""
 }
 
-variable "ssh_keyfile" {
-  description = "Location of private ssh key to connect to newly created VMs during provisioning"
-  default     = "/dev/null"
-}
+#variable "ssh_keyfile" {
+#  description = "Location of private ssh key to connect to newly created VMs during provisioning"
+#  default     = "/dev/null"
+#}
 
-variable "team_number" {
+#variable "team_number" {
   description = "Please enter your Team Number"
 }
